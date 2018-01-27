@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
     tools:context="com.woktopus.balekmobile.SimonActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -15,19 +14,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/texture">
+        android:layout_height="match_parent">
+
         <ImageButton
             android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="44dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="73dp"
-            app:srcCompat="@drawable/elephant_simon" />
+            app:srcCompat="@drawable/astro1" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -105,4 +104,17 @@
             app:srcCompat="@drawable/elephant_simon" />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgdone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignEnd="@+id/imageButton9"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageButton9"
+        android:layout_marginBottom="15dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/fourelements" />
+
 </FrameLayout>
