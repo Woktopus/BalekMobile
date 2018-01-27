@@ -6,20 +6,34 @@
     android:layout_height="match_parent"
     tools:context="com.woktopus.balekmobile.MainActivity">
 
-    <Button
-        android:id="@+id/taquin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="taquin"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="78dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="67dp">
 
-    <Button
-        android:id="@+id/simon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="simon"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="247dp" />
+        <Button
+            android:id="@+id/simon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/taquin"
+            android:layout_alignStart="@+id/taquin"
+            android:layout_below="@+id/taquin"
+            android:layout_marginTop="87dp"
+            android:text="simon"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+        <Button
+            android:id="@+id/taquin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="146dp"
+            android:text="taquin"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="78dp" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

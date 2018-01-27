@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button taquin = findViewById(R.id.taquin);
+        final Button takin = findViewById(R.id.taquin);
         final Button simon = findViewById(R.id.simon);
 
         simon.setOnClickListener(new View.OnClickListener() {
@@ -29,5 +29,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        takin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), TakinActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
