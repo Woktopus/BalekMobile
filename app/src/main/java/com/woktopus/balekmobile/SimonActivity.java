@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
@@ -25,6 +26,8 @@ public class SimonActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_simon);
+
+        final ImageView imgDone = findViewById(R.id.imgdone);
 
         ImageButton sept = this.findViewById(R.id.imageButton7);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.musique_1);
@@ -116,8 +119,9 @@ public class SimonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println(expect);
                 if(expect==6){
-                    Toast toast = Toast.makeText(getApplicationContext(),"YOU WIN MOTHER FUCKER", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Bravo", Toast.LENGTH_LONG);
                     toast.show();
+                    imgDone.setVisibility(View.VISIBLE);
                 }else{
                     expect=1;
                 }

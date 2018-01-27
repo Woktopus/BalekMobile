@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         takin = findViewById(R.id.taquin);
         final Button simon = findViewById(R.id.simon);
+        final Button code2 = findViewById(R.id.code2);
 
         simon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -36,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), TakinActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        code2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Code2Activity.class);
                 startActivity(intent);
             }
         });
