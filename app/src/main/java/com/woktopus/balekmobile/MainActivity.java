@@ -1,6 +1,7 @@
 package com.woktopus.balekmobile;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button takin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button takin = findViewById(R.id.taquin);
+        takin = findViewById(R.id.taquin);
         final Button simon = findViewById(R.id.simon);
 
         simon.setOnClickListener(new View.OnClickListener() {
@@ -36,5 +39,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(TakinActivity.resolved) {
+            takin.setBackgroundColor(Color.BLUE);
+        }
     }
 }

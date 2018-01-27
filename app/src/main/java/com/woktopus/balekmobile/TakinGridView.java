@@ -1,6 +1,7 @@
 package com.woktopus.balekmobile;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -20,27 +21,31 @@ public class TakinGridView extends GridView {
 
     public TakinGridView(Context context) {
         super(context);
-        init(context);
+        //init(context);
     }
 
     public TakinGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        //init(context);
     }
 
     public TakinGridView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
+        //init(context);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP) // API 21
     public TakinGridView(Context context, AttributeSet attrs, int defStyleAttr,
                                  int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context);
+        // init(context);
     }
 
-    private void init(final Context context) {
+    public void preInit(Activity activite) {
+        init(activite);
+    }
+
+    private void init(final Activity context) {
         gDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDown(MotionEvent event) {

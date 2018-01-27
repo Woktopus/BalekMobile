@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TakinActivity"></activity>
+        <activity android:name=".TakinActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
 
         <activity
             android:name=".SimonActivity"

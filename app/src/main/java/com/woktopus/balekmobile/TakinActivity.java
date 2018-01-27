@@ -1,13 +1,19 @@
 package com.woktopus.balekmobile;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,23 +34,31 @@ public class TakinActivity extends AppCompatActivity {
     public static final String left = "left";
     public static final String right = "right";
 
+    public static boolean resolved = false;
+
     private static String[] tileList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_takin);
 
-        init();
+        if(TakinActivity.resolved) {
+            showSolution();
+        } else {
+            init();
 
-        scramble();
+            scramble();
 
-        setDimensions();
+            setDimensions();
+        }
     }
 
     private void init() {
-        mGridView = findViewById(R.id.grid);
+        mGridView = (TakinGridView) findViewById(R.id.grid);
         mGridView.setNumColumns(COLUMNS);
+        mGridView.preInit(this);
 
         tileList = new String[DIMENSIONS];
         for (int i = 0; i < DIMENSIONS; i++) {
@@ -81,7 +95,7 @@ public class TakinActivity extends AppCompatActivity {
                 mColumnWidth = displayWidth / COLUMNS;
                 mColumnHeight = requiredHeight / COLUMNS;
 
-                display(getApplicationContext());
+                display(TakinActivity.this);
             }
         });
     }
@@ -98,7 +112,7 @@ public class TakinActivity extends AppCompatActivity {
         return result;
     }
 
-    private static void display(Context context) {
+    private static void display(Activity context) {
         ArrayList<Button> buttons = new ArrayList<>();
         Button button;
 
@@ -106,23 +120,23 @@ public class TakinActivity extends AppCompatActivity {
             button = new Button(context);
 
             if (tileList[i].equals("0"))
-                button.setBackgroundResource(R.drawable.pigeon_piece1);
+                button.setBackgroundResource(R.drawable.takin_piece1);
             else if (tileList[i].equals("1"))
-                button.setBackgroundResource(R.drawable.empty_piece);
+                button.setBackgroundResource(R.drawable.takin_piece2);
             else if (tileList[i].equals("2"))
-                button.setBackgroundResource(R.drawable.pigeon_piece2);
+                button.setBackgroundResource(R.drawable.takin_piece3);
             else if (tileList[i].equals("3"))
-                button.setBackgroundResource(R.drawable.pigeon_piece4);
+                button.setBackgroundResource(R.drawable.takin_piece4);
             else if (tileList[i].equals("4"))
-                button.setBackgroundResource(R.drawable.pigeon_piece5);
+                button.setBackgroundResource(R.drawable.takin_piece5);
             else if (tileList[i].equals("5"))
-                button.setBackgroundResource(R.drawable.pigeon_piece6);
+                button.setBackgroundResource(R.drawable.takin_piece6);
             else if (tileList[i].equals("6"))
-                button.setBackgroundResource(R.drawable.pigeon_piece7);
+                button.setBackgroundResource(R.drawable.takin_piece7);
             else if (tileList[i].equals("7"))
-                button.setBackgroundResource(R.drawable.pigeon_piece8);
+                button.setBackgroundResource(R.drawable.takin_piece8);
             else if (tileList[i].equals("8"))
-                button.setBackgroundResource(R.drawable.pigeon_piece9);
+                button.setBackgroundResource(R.drawable.takin_piece9);
 
             buttons.add(button);
         }
@@ -130,16 +144,20 @@ public class TakinActivity extends AppCompatActivity {
         mGridView.setAdapter(new TakinAdapter(buttons, mColumnWidth, mColumnHeight));
     }
 
-    private static void swap(Context context, int currentPosition, int swap) {
+    private static void swap(final Activity context, int currentPosition, int swap) {
         String newPosition = tileList[currentPosition + swap];
         tileList[currentPosition + swap] = tileList[currentPosition];
         tileList[currentPosition] = newPosition;
         display(context);
 
-        if (isSolved()) Toast.makeText(context, "YOU WIN!", Toast.LENGTH_SHORT).show();
+        if (isSolved()) {
+            Toast.makeText(context, "YOU WIN!", Toast.LENGTH_SHORT).show();
+            TakinActivity.resolved = true;
+            ((TakinActivity) context).showSolution();
+        }
     }
 
-    public static void moveTiles(Context context, String direction, int position) {
+    public static void moveTiles(Activity context, String direction, int position) {
 
         // Upper-left-corner tile
         if (position == 0) {
@@ -217,5 +235,10 @@ public class TakinActivity extends AppCompatActivity {
         }
 
         return solved;
+    }
+
+    protected void showSolution() {
+        ImageView img = findViewById(R.id.solution);
+        img.setVisibility(View.VISIBLE);
     }
 }
