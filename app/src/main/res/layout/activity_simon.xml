@@ -26,7 +26,7 @@
             android:layout_marginLeft="44dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="73dp"
-            app:srcCompat="@drawable/astro1" />
+            app:srcCompat="@drawable/elephant_simon" />
 
         <ImageButton
             android:id="@+id/imageButton8"
