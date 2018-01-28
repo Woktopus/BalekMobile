@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class Code2Activity extends AppCompatActivity {
 
+    public static boolean resolved = false;
+
     int cpt1 = 0;
     int cpt2 = 0;
     int cpt3 = 0;
@@ -33,10 +35,6 @@ public class Code2Activity extends AppCompatActivity {
         imgRes.add(R.drawable.icone_3_code_2);
         imgRes.add(R.drawable.icone_4_code_2);
         imgRes.add(R.drawable.icone_5_code_2);
-
-
-
-
 
         ImageButton uparrow1 = findViewById(R.id.up_arrow_1);
         ImageButton uparrow2 = findViewById(R.id.up_arrow_2);
@@ -135,7 +133,8 @@ public class Code2Activity extends AppCompatActivity {
 
     public void isSuccess(){
         if(cpt4 == sol4 && cpt3 == sol3 && cpt2 == sol2 & cpt1==sol1){
-            Toast.makeText(getApplicationContext(),"WIN MOTHER FUCKER",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"BRAVO !",Toast.LENGTH_LONG).show();
+            resolved = true;
         }
     }
 }

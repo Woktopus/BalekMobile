@@ -17,7 +17,9 @@ import android.widget.Toast;
  */
 public class SimonActivity extends AppCompatActivity {
 
-    int expect = 1;
+    public static boolean resolved = false;
+
+    int expect = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,35 +31,34 @@ public class SimonActivity extends AppCompatActivity {
 
         final ImageView imgDone = findViewById(R.id.imgdone);
 
+        if (resolved) imgDone.setVisibility(View.VISIBLE);
+
         ImageButton sept = this.findViewById(R.id.imageButton7);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.musique_1);
+        final MediaPlayer mp7 = MediaPlayer.create(this, R.raw.musique_7);
         sept.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 System.out.println(expect);
 
-                if(expect==1){
-                    expect=2;
-                }else{
-                    expect=1;
-                }
-                mp.start();
+                expect = 2;
+
+                mp7.start();
             }
         });
 
         ImageButton huit = this.findViewById(R.id.imageButton8);
-        final MediaPlayer mp2 = MediaPlayer.create(this, R.raw.musique_2);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.musique_1);
         huit.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 System.out.println(expect);
 
                 if(expect==2){
-                    expect=3;
+                    expect=6;
                 }else{
-                    expect=1;
+                    expect=2;
                 }
-                mp2.start();
+                mp.start();
             }
         });
 
@@ -119,9 +120,10 @@ public class SimonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println(expect);
                 if(expect==6){
-                    Toast toast = Toast.makeText(getApplicationContext(),"Bravo", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(),"BRAVO !", Toast.LENGTH_LONG);
                     toast.show();
                     imgDone.setVisibility(View.VISIBLE);
+                    resolved = true;
                 }else{
                     expect=1;
                 }

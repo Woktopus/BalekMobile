@@ -12,6 +12,9 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button takin;
+    private Button simon;
+    private Button code2;
+    private Button missingWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         takin = findViewById(R.id.taquin);
-        final Button simon = findViewById(R.id.simon);
-        final Button code2 = findViewById(R.id.code2);
+        simon = findViewById(R.id.simon);
+        code2 = findViewById(R.id.code2);
+        missingWord = findViewById(R.id.missing_word);
 
         simon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -41,11 +45,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         code2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), Code2Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        missingWord.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), MissingWordActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,8 +65,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        if(SimonActivity.resolved) {
+            simon.setBackgroundColor(Color.BLUE);
+        }
+
         if(TakinActivity.resolved) {
             takin.setBackgroundColor(Color.BLUE);
+        }
+
+        if(Code2Activity.resolved) {
+            code2.setBackgroundColor(Color.BLUE);
+        }
+
+        if(MissingWordActivity.resolved) {
+            missingWord.setBackgroundColor(Color.BLUE);
         }
     }
 }
