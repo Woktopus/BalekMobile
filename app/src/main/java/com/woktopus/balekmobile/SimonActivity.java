@@ -4,9 +4,11 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -28,6 +30,17 @@ public class SimonActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_simon);
+
+        final GridLayout grid = findViewById(R.id.gridsimon);
+
+        grid.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                grid.getLayoutParams().height = grid.getWidth();
+                grid.requestLayout();
+                grid.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
 
         final ImageView imgDone = findViewById(R.id.imgdone);
 
