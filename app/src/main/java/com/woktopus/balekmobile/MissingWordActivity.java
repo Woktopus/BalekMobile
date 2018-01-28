@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +27,7 @@ public class MissingWordActivity extends AppCompatActivity {
         final EditText inputText = findViewById(R.id.input_text);
 
         if(resolved) {
-            TextView answer = findViewById(R.id.answer);
+            ImageView answer = findViewById(R.id.soluce_mw);
             answer.setVisibility(View.VISIBLE);
         }
 
@@ -36,7 +37,7 @@ public class MissingWordActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(),"BRAVO !", Toast.LENGTH_LONG);
                     toast.show();
                     resolved = true;
-                    TextView answer = findViewById(R.id.answer);
+                    ImageView answer = findViewById(R.id.soluce_mw);
                     answer.setVisibility(View.VISIBLE);
                     mp7.start();
                 } else {

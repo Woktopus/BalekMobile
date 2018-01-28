@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         if(SimonActivity.resolved) {
-            simon.setBackgroundColor(Color.BLUE);
+            simon.setBackground(ContextCompat.getDrawable(this, R.drawable.rune_enabled));
         }
 
         if(TakinActivity.resolved) {
@@ -100,15 +100,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(Code2Activity.resolved) {
-            code2.setBackgroundColor(Color.BLUE);
+            code2.setBackground(ContextCompat.getDrawable(this, R.drawable.rune_enabled));
         }
 
         if(MissingWordActivity.resolved) {
-            missingWord.setBackgroundColor(Color.BLUE);
+            missingWord.setBackground(ContextCompat.getDrawable(this, R.drawable.rune_enabled));
         }
 
         if(FigureActivity.resolved) {
-            figure.setBackgroundColor(Color.BLUE);
+            figure.setBackground(ContextCompat.getDrawable(this, R.drawable.rune_enabled));
         }
     }
 }

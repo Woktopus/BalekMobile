@@ -20,8 +20,8 @@
             android:layout_alignLeft="@+id/taquin"
             android:layout_alignStart="@+id/taquin"
             android:layout_below="@+id/taquin"
-            android:layout_marginTop="26dp"
-            android:text="simon"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rune_disabled"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="247dp" />
 
@@ -32,7 +32,7 @@
             android:layout_alignLeft="@+id/figure"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/figure"
-            android:layout_marginTop="147dp"
+            android:layout_marginTop="110dp"
             android:background="@drawable/rune_disabled"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="78dp" />
@@ -44,26 +44,26 @@
             android:layout_alignLeft="@+id/simon"
             android:layout_alignStart="@+id/simon"
             android:layout_below="@+id/simon"
-            android:layout_marginTop="25dp"
-            android:text="code2" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rune_disabled" />
 
         <Button
             android:id="@+id/missing_word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/code2"
-            android:layout_marginTop="25dp"
-            android:text="missing word" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rune_disabled" />
 
         <Button
             android:id="@+id/figure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/missing_word"
-            android:layout_marginTop="25dp"
-            android:text="Figure" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rune_disabled" />
 
         <Button
             android:id="@+id/first"
@@ -72,8 +72,8 @@
             android:layout_alignEnd="@+id/taquin"
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/taquin"
-            android:layout_marginTop="69dp"
-            android:text="first" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rune_enabled" />
 
     </RelativeLayout>
 

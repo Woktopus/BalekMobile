@@ -35,17 +35,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:text="éssayer" />
+        android:text="éssayer"
+        android:translationZ="0dp" />
 
-    <TextView
-        android:id="@+id/answer"
+    <ImageView
+        android:id="@+id/soluce_mw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/input_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:text="La réponse est : disciple"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="18sp"
-        android:visibility="invisible" />
+        android:translationZ="2dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/soluce_mw" />
 </RelativeLayout>
