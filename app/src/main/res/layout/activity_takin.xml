@@ -19,5 +19,5 @@
         android:contentDescription="yolo"
         android:scaleType="centerCrop"
         android:visibility="invisible"
-        app:srcCompat="@drawable/solution_tacking" />
+        app:srcCompat="@drawable/soluce_takin" />
 </FrameLayout>

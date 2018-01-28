@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(FigureActivity.resolved) {
-            missingWord.setBackgroundColor(Color.BLUE);
+            figure.setBackgroundColor(Color.BLUE);
         }
     }
 }
