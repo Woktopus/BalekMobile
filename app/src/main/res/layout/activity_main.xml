@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="67dp">
@@ -63,6 +64,16 @@
             android:layout_below="@+id/missing_word"
             android:layout_marginTop="25dp"
             android:text="Figure" />
+
+        <Button
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/taquin"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/taquin"
+            android:layout_marginTop="69dp"
+            android:text="first" />
 
     </RelativeLayout>
 

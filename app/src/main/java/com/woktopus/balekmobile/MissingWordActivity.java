@@ -1,6 +1,7 @@
 package com.woktopus.balekmobile;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,9 @@ public class MissingWordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_missing_word);
 
+        final MediaPlayer mp7 = MediaPlayer.create(this, R.raw.s2);
+
+
         Button tryBtn = findViewById(R.id.try_btn);
         final EditText inputText = findViewById(R.id.input_text);
 
@@ -34,6 +38,7 @@ public class MissingWordActivity extends AppCompatActivity {
                     resolved = true;
                     TextView answer = findViewById(R.id.answer);
                     answer.setVisibility(View.VISIBLE);
+                    mp7.start();
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"MAUVAISE RÉPONSE !", Toast.LENGTH_LONG);
                     toast.show();

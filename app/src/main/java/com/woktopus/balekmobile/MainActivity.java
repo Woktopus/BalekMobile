@@ -15,6 +15,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button firstSouvenir;
     private Button takin;
     private Button simon;
     private Button code2;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         code2 = findViewById(R.id.code2);
         missingWord = findViewById(R.id.missing_word);
         figure = findViewById(R.id.figure);
+        firstSouvenir = findViewById(R.id.first);
 
         simon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), FigureActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        firstSouvenir.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
                 startActivity(intent);
             }
         });

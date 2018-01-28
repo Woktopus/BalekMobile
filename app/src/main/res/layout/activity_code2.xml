@@ -176,6 +176,14 @@
             android:rotation="-90"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/aarrow" />
+
+        <ImageView
+            android:id="@+id/imgfin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/offrande" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

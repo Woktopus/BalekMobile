@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
@@ -149,11 +150,14 @@ public class TakinActivity extends AppCompatActivity {
         tileList[currentPosition + swap] = tileList[currentPosition];
         tileList[currentPosition] = newPosition;
         display(context);
+        final MediaPlayer mp7 = MediaPlayer.create(context, R.raw.s6);
 
         if (isSolved()) {
             Toast.makeText(context, "YOU WIN!", Toast.LENGTH_SHORT).show();
             TakinActivity.resolved = true;
             ((TakinActivity) context).showSolution();
+            mp7.setVolume(1,1);
+            mp7.start();
         }
     }
 

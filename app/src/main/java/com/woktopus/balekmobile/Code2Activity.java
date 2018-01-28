@@ -1,7 +1,7 @@
 package com.woktopus.balekmobile;
 
-import android.content.Intent;
-import android.media.Image;
+
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Code2Activity extends AppCompatActivity {
 
     public static boolean resolved = false;
-
+    ImageView imgFin;
     int cpt1 = 0;
     int cpt2 = 0;
     int cpt3 = 0;
@@ -28,6 +28,8 @@ public class Code2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code2);
+
+        imgFin = findViewById(R.id.imgfin);
 
         final ArrayList<Integer> imgRes = new ArrayList<>();
         imgRes.add(R.drawable.icone_1_code_2);
@@ -50,6 +52,10 @@ public class Code2Activity extends AppCompatActivity {
         final ImageView imgw2 = findViewById(R.id.imageView2);
         final ImageView imgw3 = findViewById(R.id.imageView3);
         final ImageView imgw4 = findViewById(R.id.imageView4);
+
+        if(resolved){
+            imgFin.setVisibility(View.VISIBLE);
+        }
 
         uparrow1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -132,9 +138,13 @@ public class Code2Activity extends AppCompatActivity {
     }
 
     public void isSuccess(){
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.s5);
+
         if(cpt4 == sol4 && cpt3 == sol3 && cpt2 == sol2 & cpt1==sol1){
             Toast.makeText(getApplicationContext(),"BRAVO !",Toast.LENGTH_LONG).show();
+            imgFin.setVisibility(View.VISIBLE);
             resolved = true;
+            mp.start();
         }
     }
 }
