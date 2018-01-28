@@ -33,9 +33,9 @@ public class SimonActivity extends AppCompatActivity {
 
         if (resolved) imgDone.setVisibility(View.VISIBLE);
 
-        ImageButton sept = this.findViewById(R.id.imageButton7);
+        ImageButton btn1 = this.findViewById(R.id.imageButton7);
         final MediaPlayer mp7 = MediaPlayer.create(this, R.raw.musique_7);
-        sept.setOnClickListener(new View.OnClickListener(){
+        btn1.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 System.out.println(expect);
@@ -46,9 +46,9 @@ public class SimonActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton huit = this.findViewById(R.id.imageButton8);
+        ImageButton btn2 = this.findViewById(R.id.imageButton8);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.musique_1);
-        huit.setOnClickListener(new View.OnClickListener(){
+        btn2.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 System.out.println(expect);
@@ -62,107 +62,111 @@ public class SimonActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton neuf = this.findViewById(R.id.imageButton9);
-        final MediaPlayer mp3 = MediaPlayer.create(this, R.raw.musique_3);
-        neuf.setOnClickListener(new View.OnClickListener(){
+        ImageButton btn3 = this.findViewById(R.id.imageButton9);
+        final MediaPlayer mp6 = MediaPlayer.create(this, R.raw.musique_6);
+        btn3.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
                 System.out.println(expect);
 
                 if(expect==3){
-                    expect=4;
-                }else{
-                    expect=1;
-                }
-                mp3.start();
-            }
-        });
-
-
-        final ImageButton dix = this.findViewById(R.id.imageButton10);
-        final MediaPlayer mp4 = MediaPlayer.create(this, R.raw.musique_4);
-        dix.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick(View v) {
-                System.out.println(expect);
-
-                if(expect==4){
-                    expect=5;
-                }else{
-                    expect=1;
-                }
-                mp4.start();
-            }
-        });
-
-
-        ImageButton onze = this.findViewById(R.id.imageButton11);
-        final MediaPlayer mp5 = MediaPlayer.create(this, R.raw.musique_5);
-        onze.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick(View v) {
-                System.out.println(expect);
-
-                if(expect==5){
-                    expect=6;
-                }else{
-                    expect=1;
-                }
-                mp5.start();
-            }
-        });
-
-
-        ImageButton douze = this.findViewById(R.id.imageButton12);
-        final MediaPlayer mp6 = MediaPlayer.create(this, R.raw.musique_6);
-        douze.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick(View v) {
-                System.out.println(expect);
-                if(expect==6){
                     Toast toast = Toast.makeText(getApplicationContext(),"BRAVO !", Toast.LENGTH_LONG);
                     toast.show();
                     imgDone.setVisibility(View.VISIBLE);
                     resolved = true;
                 }else{
-                    expect=1;
+                    expect=2;
                 }
                 mp6.start();
             }
         });
 
 
-        ImageButton treize = this.findViewById(R.id.imageButton13);
-        final MediaPlayer mp7 = MediaPlayer.create(this, R.raw.musique_7);
-        treize.setOnClickListener(new View.OnClickListener(){
+        final ImageButton btn4 = this.findViewById(R.id.imageButton10);
+        final MediaPlayer mp5 = MediaPlayer.create(this, R.raw.musique_5);
+        btn4.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
-                expect=1;
+                System.out.println(expect);
 
-                mp7.start();
+                if(expect==4){
+                    expect=3;
+                }else{
+                    expect=2;
+                }
+                mp5.start();
             }
         });
 
 
-        ImageButton quatorze = this.findViewById(R.id.imageButton14);
-        final MediaPlayer mp8 = MediaPlayer.create(this, R.raw.musique_8);
-        quatorze.setOnClickListener(new View.OnClickListener(){
+        ImageButton btn5 = this.findViewById(R.id.imageButton11);
+        final MediaPlayer mp4 = MediaPlayer.create(this, R.raw.musique_4);
+        btn5.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
-                expect=1;
+                System.out.println(expect);
+
+                if(expect==5){
+                    expect=4;
+                }else{
+                    expect=2;
+                }
+                mp4.start();
+            }
+        });
+
+
+        ImageButton btn6 = this.findViewById(R.id.imageButton12);
+        final MediaPlayer mp2 = MediaPlayer.create(this, R.raw.musique_2);
+        btn6.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                System.out.println(expect);
+                if(expect==6){
+                    expect = 9;
+                }else{
+                    expect=2;
+                }
+                mp2.start();
+            }
+        });
+
+
+        ImageButton btn7 = this.findViewById(R.id.imageButton13);
+        final MediaPlayer mp8 = MediaPlayer.create(this, R.raw.musique_8);
+        btn7.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                expect=2;
 
                 mp8.start();
             }
         });
 
-        ImageButton quinze = this.findViewById(R.id.imageButton15);
+
+        ImageButton btn8 = this.findViewById(R.id.imageButton14);
         final MediaPlayer mp9 = MediaPlayer.create(this, R.raw.musique_9);
-        quinze.setOnClickListener(new View.OnClickListener(){
+        btn8.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v) {
-                expect=1;
+                expect=2;
 
-                mp9.start();
+                mp8.start();
+            }
+        });
+
+        ImageButton btn9 = this.findViewById(R.id.imageButton15);
+        final MediaPlayer mp3 = MediaPlayer.create(this, R.raw.musique_3);
+        btn9.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                if(expect==9){
+                    expect = 5;
+                }else{
+                    expect=2;
+                }
+
+                mp3.start();
             }
         });
 
