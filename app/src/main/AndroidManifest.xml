@@ -18,14 +18,15 @@
         </activity>
         <activity
             android:name=".TakinActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".SimonActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_simon"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Code2Activity" />
-        <activity android:name=".MissingWordActivity"></activity>
+        <activity android:name=".MissingWordActivity" />
+        <activity android:name=".FigureActivity"></activity>
     </application>
 
 </manifest>
